@@ -109,3 +109,16 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}  
+
+  organizr:
+    image: linuxserver/organizr:latest
+    container_name: organizr
+    restart: always
+    volumes:
+      - ${ROOT}/docker/organizr:/config
+    ports:
+      - 9983:80
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
